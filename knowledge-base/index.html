@@ -156,7 +156,7 @@
 <script>
 (function(){
 var slides=Array.prototype.slice.call(document.querySelectorAll('.slide')),i=0,overview=document.getElementById('overview'),toast=document.getElementById('toast');
-var gate=document.getElementById('gate'),gateForm=document.getElementById('gate-form'),gateInput=document.getElementById('gate-input'),gateError=document.getElementById('gate-error'),ACCESS_CODE='HuanYue-6V9Q';
+var gate=document.getElementById('gate'),gateForm=document.getElementById('gate-form'),gateInput=document.getElementById('gate-input'),gateError=document.getElementById('gate-error'),ACCESS_CODE='CJWSJY';
 gateForm.addEventListener('submit',function(e){e.preventDefault();if(gateInput.value===ACCESS_CODE){gate.hidden=true;gateError.textContent='';document.getElementById('next').focus()}else{gateError.textContent='口令不正确，请重试。';gateInput.value='';gateInput.focus()}});
 function fit(){var s=Math.min(window.innerWidth/1600,window.innerHeight/900);document.documentElement.style.setProperty('--scale',s)}
 function show(n){i=Math.max(0,Math.min(slides.length-1,n));slides.forEach(function(x,j){x.classList.toggle('active',j===i)});document.getElementById('counter').textContent=String(i+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0');document.getElementById('progress').style.width=((i+1)/slides.length*100)+'%';document.title=slides[i].getAttribute('data-title')+'｜水环院知识库建设技术路线';history.replaceState(null,'','#'+(i+1));}
